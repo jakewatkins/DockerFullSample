@@ -1,0 +1,36 @@
+﻿@using Microsoft.EntityFrameworkCore.Metadata.Internal
+@model IEnumerable<Notebook.Model.Note>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<div class="m-1 p-1">
+    <h4 class="bg-success text-xs-center p-1 text-white">@ViewBag.Message</h4>
+    <table class="table table-sm table-striped">
+        <thead>
+        <tr><th>ID</th><th>Date</th><th>Note</th></tr>
+        </thead>
+        <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.NoteId</td>
+                <td>@p.Created</td>
+                <td>@p.NoteText</td>
+            </tr>
+
+        }
+        </tbody>
+    </table>
+</div>
+@using (@Html.BeginForm("CreateNewNote", "Home", FormMethod.Post))
+{
+    <div class="m-1 p-1">
+        <h4>Note</h4>
+        <label>Note:</label>
+        <input name="NoteText" type="text"/>
+        <button type="submit">Submit</button>
+    </div>
+}
+
