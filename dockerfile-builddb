@@ -1,0 +1,13 @@
+#
+#
+#
+#
+#
+FROM jakewatkins/mysql-db-build:1.0
+
+WORKDIR /dbbuild
+
+COPY ./DBinit/ .
+RUN chmod +x ./build-notesdb.sh
+
+ENTRYPOINT ["/dbbuild/build-notesdb.sh"]
