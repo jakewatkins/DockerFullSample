@@ -1,0 +1,10 @@
+version: '3'
+
+services:
+  noteweb:
+    image: noteweb
+    build:
+      context: ./NoteWeb
+      dockerfile: Dockerfile
+    env_file:
+        - ./NoteWeb/settings.env

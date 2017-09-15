@@ -1,0 +1,31 @@
+# FullSample
+#
+# Compile the solution inside a docker container and then copy the results in to the final image
+#
+
+# Build stage 1 - compile the solution/application
+FROM microsoft/aspnetcore-build AS builder
+
+WORKDIR /source
+
+# copy the solution in to the image
+COPY . .
+#CMD rm /source/FullSample.sln
+
+# restore the solution's packages
+RUN dotnet restore 
+
+#build the solution
+RUN dotnet publish --output /app/ --configuration Release
+
+
+
+# Build stage 2 - build the container image
+FROM microsoft/aspnetcore:1.1.2
+WORKDIR /app
+COPY --from=builder /app .
+
+EXPOSE 80/tcp
+
+# Set the image entry point
+#ENTRYPOINT ["dotnet", "NoteWeb.dll"]

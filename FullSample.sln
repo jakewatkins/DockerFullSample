@@ -1,11 +1,18 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.12
+VisualStudioVersion = 15.0.26730.15
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Notebook.Model", "Notebook.Model\Notebook.Model.csproj", "{7BB38298-5657-4A26-8A91-12EE4AE0A5A6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notebook.Model", "Notebook.Model\Notebook.Model.csproj", "{7BB38298-5657-4A26-8A91-12EE4AE0A5A6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NoteWeb", "NoteWeb\NoteWeb.csproj", "{7381FF72-0991-47FC-92CE-F951A87C4281}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NoteWeb", "NoteWeb\NoteWeb.csproj", "{7381FF72-0991-47FC-92CE-F951A87C4281}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{4D708883-EB5C-43E7-AADC-7E9C74638B7B}"
+	ProjectSection(SolutionItems) = preProject
+		docker-compose.yml = docker-compose.yml
+		Dockerfile = Dockerfile
+		Dockerfile-selfcontained = Dockerfile-selfcontained
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

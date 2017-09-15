@@ -41,7 +41,7 @@ namespace Notebook.Model
         {
 
             var envs = Environment.GetEnvironmentVariables();
-
+            
             var host = envs["DBHOST"] ?? "localhost";
             var port = envs["DBPORT"] ?? "3306";
             var password = envs["DBPASSWORD"] ?? "mysecret";
