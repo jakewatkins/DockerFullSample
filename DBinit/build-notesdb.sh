@@ -3,7 +3,7 @@
 mysqladmin -u root -p$MYSQL_ROOT_PASSWORD -h$DBHOST ping --wait 
 
 # load the DDL
-mysql -u root "-p$MYSQL_ROOT_PASSWORD" -h$DBHOST < /dbbuild/notesdb.sql
+mysql -u root "-p$MYSQL_ROOT_PASSWORD" -h$DBHOST < /source/DBinit/notesdb.sql
 
 # load some sample data
-mysql -u root "-p$MYSQL_ROOT_PASSWORD" -h$DBHOST < /dbbuild/notes-sample.sql
+mysql -u root "-p$MYSQL_ROOT_PASSWORD" -h$DBHOST < /source/DBinit/notes-sample.sql

@@ -24,7 +24,7 @@ services:
   dbinit:
     build:
       context: .
-      dockerfile: ./DbInit/Dockerfile
+      dockerfile: dockerfile-builddb
     networks:
       - backend
     environment:

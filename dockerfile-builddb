@@ -3,11 +3,9 @@
 #
 #
 #
-FROM jakewatkins/mysql-db-build:1.0
+FROM jakewatkins/mysql-db-build:1.1
 
-WORKDIR /dbbuild
+RUN git clone https://github.com/jakewatkins/DockerFullSample.git /source \
+			&& chmod +x /source/DBinit/build-notesdb.sh
 
-COPY ./DBinit/ .
-RUN chmod +x ./build-notesdb.sh
-
-ENTRYPOINT ["/dbbuild/build-notesdb.sh"]
+ENTRYPOINT ["/source/DBinit/build-notesdb.sh"]
