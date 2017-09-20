@@ -13,10 +13,10 @@ services:
 
   mysql:
     image: "mysql:8.0.0"
-#    volumes:
-#      - notesdata:/var/lib/mysql
     networks:
       - backend
+    ports:  
+      - 3306:3306
     environment: 
       - MYSQL_ROOT_PASSWORD=mysecret
       - bind-address=0.0.0.0
@@ -28,6 +28,7 @@ services:
     networks:
       - backend
     environment:
+      - MYSQL_ROOT_PASSWORD=mysecret
       - INITDB=true
       - DBHOST=mysql
     depends_on:
@@ -42,11 +43,15 @@ services:
     networks:
       - backend
       - frontend
+    ports:
+      - "5022:22"
     environment:
+      - MYSQL_ROOT_PASSWORD=mysecret
       - DBHOST=mysql
+      - DBPORT=3306
     depends_on:
       - mysql
-
+    
   loadbalancer:
     image: dockercloud/haproxy:1.2.1
     ports: 
