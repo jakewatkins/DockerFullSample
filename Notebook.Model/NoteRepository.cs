@@ -38,7 +38,7 @@ namespace Notebook.Model
         #endregion
 
         #region Properties
-        public IQueryable<Note> Notes => _context.Note;
+        public IQueryable<Note> Note => _context.Note;
         #endregion
 
         #region Public interface

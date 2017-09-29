@@ -19,7 +19,7 @@ namespace Notebook.Model
 {
     public interface INoteRepository
     {
-        IQueryable<Note> Notes { get; }
+        IQueryable<Note> Note { get; }
         void SaveNote(Note note);
     }
 }
