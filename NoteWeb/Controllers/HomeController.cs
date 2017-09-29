@@ -18,7 +18,7 @@ namespace NoteWeb.Controllers
         }
         public IActionResult Index()
         {
-            IEnumerable<Note> notes = (from n in _noteRepository.Notes
+            IEnumerable<Note> notes = (from n in _noteRepository.Note
                 select n).AsEnumerable();
 
             return View(notes);
