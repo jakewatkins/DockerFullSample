@@ -38,14 +38,14 @@ namespace Notebook.Model
         #endregion
 
         #region Properties
-        public IQueryable<Note> Notes => _context.Notes;
+        public IQueryable<Note> Notes => _context.Note;
         #endregion
 
         #region Public interface
 
         public void SaveNote(Note note)
         {
-            _context.Notes.Add(note);
+            _context.Note.Add(note);
             _context.SaveChanges();
         }
         #endregion
