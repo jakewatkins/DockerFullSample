@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
-VisualStudioVersion = 15.0.26730.15
+VisualStudioVersion = 15.0.26730.16
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Notebook.Model", "Notebook.Model\Notebook.Model.csproj", "{7BB38298-5657-4A26-8A91-12EE4AE0A5A6}"
 EndProject
@@ -11,7 +11,15 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Docker", "Docker", "{4D7088
 	ProjectSection(SolutionItems) = preProject
 		docker-compose.yml = docker-compose.yml
 		Dockerfile = Dockerfile
+		dockerfile-builddb = dockerfile-builddb
 		Dockerfile-selfcontained = Dockerfile-selfcontained
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DBInit", "DBInit", "{B0551BC3-72B6-49E1-9B71-FB47020511C1}"
+	ProjectSection(SolutionItems) = preProject
+		DBinit\build-notesdb.sh = DBinit\build-notesdb.sh
+		DBinit\notes-sample.sql = DBinit\notes-sample.sql
+		DBinit\notesdb.sql = DBinit\notesdb.sql
 	EndProjectSection
 EndProject
 Global
