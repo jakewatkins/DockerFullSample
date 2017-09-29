@@ -51,7 +51,7 @@ namespace Notebook.Model
         #endregion
 
         #region Properties
-        public DbSet<Note> Notes { get; set; }
+        public DbSet<Note> Note { get; set; }
         #endregion
 
         #region Public interface

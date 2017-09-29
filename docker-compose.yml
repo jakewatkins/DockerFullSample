@@ -15,6 +15,7 @@ services:
     image: "mysql:8.0.0"
     networks:
       - backend
+      - frontend
     ports:  
       - 3306:3306
     environment: 
@@ -46,6 +47,7 @@ services:
     ports:
       - "5022:22"
     environment:
+      - ASPNETCORE_ENVIRONMENT=Development
       - MYSQL_ROOT_PASSWORD=mysecret
       - DBHOST=mysql
       - DBPORT=3306
@@ -62,3 +64,4 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock
     networks:
       - frontend
+     
