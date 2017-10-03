@@ -15,7 +15,6 @@ services:
     image: "mysql:8.0.0"
     networks:
       - backend
-      - frontend
     ports:  
       - 3306:3306
     environment: 
